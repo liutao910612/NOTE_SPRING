@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <import resource="dependency-lookup-context.xml"/>
+
+    <bean id="user-by-static-method" class="com.kevin.ioc.overview.domain.User" factory-method="createUser"/>
+    <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
+    <bean id="user-by-factory-bean" class="com.kevin.bean.factory.UserFactoryBean"/>
+
+    <bean id="userFactory" class="com.kevin.bean.factory.UserFactory"/>
+
+</beans>

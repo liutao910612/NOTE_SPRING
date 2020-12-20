@@ -31,11 +31,9 @@
 + ClassLoader类加载
 + Java Security安全控制
 + ConfigurableBeanFactory临时ClassLoader
-<br/>
-**Q**：How to set properties
 
 # Spring Bean实例化前阶段
 + 非主流生命周期-Bean实例化前阶段<br/>
-InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation<br/>
 这里再源码中体现为在调用createBean之前会扫描拥有的BeanPostProcessor，如果postProcessBeforeInstantiation返回为非空，就直接返回当前的值，
 不再调用createBean.

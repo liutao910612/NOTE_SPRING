@@ -27,9 +27,15 @@
 + 层次性BeaFactory查找<br/>
 **总结**使用BeanDefinition中的parentName属性来进行父类BeanDefinition的查找并进行合并。
 
-#Spring Bean Class加载阶段
+# Spring Bean Class加载阶段
 + ClassLoader类加载
 + Java Security安全控制
 + ConfigurableBeanFactory临时ClassLoader
 <br/>
 **Q**：How to set properties
+
+# Spring Bean实例化前阶段
++ 非主流生命周期-Bean实例化前阶段<br/>
+InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+这里再源码中体现为在调用createBean之前会扫描拥有的BeanPostProcessor，如果postProcessBeforeInstantiation返回为非空，就直接返回当前的值，
+不再调用createBean.

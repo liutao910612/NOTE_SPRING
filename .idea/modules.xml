@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NOTE_SPRING.iml" filepath="$PROJECT_DIR$/NOTE_SPRING.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bean-life-cycle/bean-life-cycle.iml" filepath="$PROJECT_DIR$/bean-life-cycle/bean-life-cycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bean-scope/bean-scope.iml" filepath="$PROJECT_DIR$/bean-scope/bean-scope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependency-injection/dependency-injection.iml" filepath="$PROJECT_DIR$/dependency-injection/dependency-injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependency-lookup/dependency-lookup.iml" filepath="$PROJECT_DIR$/dependency-lookup/dependency-lookup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dependency-source/dependency-source.iml" filepath="$PROJECT_DIR$/dependency-source/dependency-source.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ioc-container-overview/ioc-container-overview.iml" filepath="$PROJECT_DIR$/ioc-container-overview/ioc-container-overview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-bean/spring-bean.iml" filepath="$PROJECT_DIR$/spring-bean/spring-bean.iml" />
+    </modules>
+  </component>
+</project>

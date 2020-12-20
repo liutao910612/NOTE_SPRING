@@ -1,11 +1,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/context
-        https://www.springframework.org/schema/beans/spring-context.xsd">
-    <context:annotation-config/>
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id = "user" class="com.kevin.ioc.overview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="alvin"/>
@@ -17,9 +13,5 @@ http://www.springframework.org/schema/context
 
     <bean id="superUser" class="com.kevin.ioc.overview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="成都"/>
-    </bean>
-
-    <bean id = "objectFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
-        <property name="targetBeanName" value="user"/>
     </bean>
 </beans>

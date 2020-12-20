@@ -27,3 +27,9 @@
 + 层次性BeaFactory查找<br/>
 **总结**使用BeanDefinition中的parentName属性来进行父类BeanDefinition的查找并进行合并。
 
+#Spring Bean Class加载阶段
++ ClassLoader类加载
++ Java Security安全控制
++ ConfigurableBeanFactory临时ClassLoader
+<br/>
+**Q**：How to set properties

@@ -15,4 +15,5 @@
     </bean>
 
     <bean id="userHolder" class="com.kevin.base.domain.UserHolder" autowire="constructor"></bean>
+
 </beans>

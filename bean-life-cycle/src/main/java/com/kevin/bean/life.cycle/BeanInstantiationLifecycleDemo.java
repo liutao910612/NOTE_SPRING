@@ -1,12 +1,8 @@
 package com.kevin.bean.life.cycle;
 
-import com.kevin.base.domain.SuperUser;
-import com.kevin.base.domain.User;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.util.ObjectUtils;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * bean实例化前阶段示例
@@ -17,6 +13,12 @@ import org.springframework.util.ObjectUtils;
 public class BeanInstantiationLifecycleDemo {
 
     public static void main(String[] args) {
+        executeByBeanFactory();
+        System.out.println("-------------------------------");
+        executeByApplicationContext();
+    }
+
+    public static void executeByBeanFactory(){
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
 
@@ -29,30 +31,15 @@ public class BeanInstantiationLifecycleDemo {
         System.out.println(beanFactory.getBean("userHolder"));
     }
 
-    static class MyInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
-
-        @Override
-        public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-            if (ObjectUtils.nullSafeEquals("superUser", beanName) && SuperUser.class.equals(beanClass)) {
-
-                //把XML配置完成的SuperUser bean覆盖掉
-                return new SuperUser();
-            }
-            return null;  //返回为空的时候会继续创建bean
-        }
-
-        @Override
-        public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
-            if (ObjectUtils.nullSafeEquals("user", beanName) && User.class.equals(bean.getClass())) {
-                User user = (User) bean;
-                user.setId(2L);
-                user.setName("kevin");
-
-                //"user"对象不允许属性赋值（填入）（配置元信息->属性值）
-                return false;
-            }
-            return true;
-        }
+    public static void executeByApplicationContext(){
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext();
+        String location = "META-INF/dependency-lookup-context.xml";
+        applicationContext.setConfigLocations(location);
+        applicationContext.refresh();
+        System.out.println(applicationContext.getBean("user"));
+        System.out.println(applicationContext.getBean("superUser"));
+        System.out.println(applicationContext.getBean("userHolder"));
+        applicationContext.close();
     }
-
 }
+

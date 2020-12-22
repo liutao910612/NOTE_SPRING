@@ -54,3 +54,15 @@ InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation<br/>
 2. Bean属性赋值前回调
 + Spring1.2-5.0:InstantiationAwareBeanPostProcessor#postProcessPropertyValues
 + Spring5.1:InstantiationAwareBeanPostProcessor#postProcessProperties
+
+# Spring Bean Aware接口回调阶段
+## Spring Aware接口
++ BeanNameAware
++ BeanClassLoaderAware
++ BeanFactoryAware
++ EnvironmentAware
++ EmbeddedValueResolverAware
++ ResourceLoaderAware
++ ApplicationEventPublisherAware
++ MessageSourceAware
++ ApplicationContextAware

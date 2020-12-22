@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="base" />
         <module name="bean-life-cycle" />
         <module name="bean-scope" />
         <module name="bean-sscope" />
@@ -19,6 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="base" target="1.5" />
       <module name="bean-life-cycle" target="1.8" />
       <module name="bean-scope" target="1.8" />
       <module name="bean-sscope" target="1.8" />

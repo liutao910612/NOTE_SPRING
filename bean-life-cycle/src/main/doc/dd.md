@@ -35,5 +35,22 @@
 # Spring Bean实例化前阶段
 + 非主流生命周期-Bean实例化前阶段<br/>
 InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation<br/>
-这里再源码中体现为在调用createBean之前会扫描拥有的BeanPostProcessor，如果postProcessBeforeInstantiation返回为非空，就直接返回当前的值，
+**总结**这里在源码中体现为在调用createBean之前会扫描拥有的BeanPostProcessor，如果postProcessBeforeInstantiation返回为非空，就直接返回当前的值，
 不再调用createBean.
+
+# Spring Bean实例化阶段
++ 实例化方式
+1. 传统实例化方式
+  1. 实例化策略 - InstantiationStrategy
+2. 构造器依赖注入
+
+# Spring Bean实例化后阶段
++ Bean属性赋值（Populate）判断<br/>
+InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation<br/>
+
+# Spring Bean属性赋值前阶段
+1. Bean属性值元信息
++ PropertyValues
+2. Bean属性赋值前回调
++ Spring1.2-5.0:InstantiationAwareBeanPostProcessor#postProcessPropertyValues
++ Spring5.1:InstantiationAwareBeanPostProcessor#postProcessProperties

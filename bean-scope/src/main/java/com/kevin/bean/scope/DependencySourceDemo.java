@@ -1,17 +1,10 @@
 package com.kevin.bean.scope;
 
 import com.kevin.ioc.overview.domain.User;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
-import org.springframework.core.io.ResourceLoader;
-
-import javax.annotation.PostConstruct;
 
 /**
  * Bean的作用域示例

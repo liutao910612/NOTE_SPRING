@@ -1,6 +1,6 @@
-package com.kevin.ioc.overview.domain;
+package com.kevin.base.domain;
 
-import com.kevin.ioc.overview.enums.City;
+import com.kevin.base.enums.City;
 import org.springframework.core.io.Resource;
 
 import javax.annotation.PostConstruct;

@@ -1,6 +1,4 @@
-package com.kevin.ioc.overview.annotation;
-
-import org.springframework.stereotype.Component;
+package com.kevin.base.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

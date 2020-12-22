@@ -4,7 +4,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <import resource="dependency-lookup-context.xml"/>
 
-    <bean id="user-by-static-method" class="com.kevin.ioc.overview.domain.User" factory-method="createUser"/>
+    <bean id="user-by-static-method" class="com.kevin.base.domain.User" factory-method="createUser"/>
     <bean id="user-by-instance-method" factory-bean="userFactory" factory-method="createUser"/>
     <bean id="user-by-factory-bean" class="com.kevin.bean.factory.UserFactoryBean"/>
 

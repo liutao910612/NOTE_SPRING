@@ -1,6 +1,6 @@
 package com.kevin.bean.life.cycle;
 
-import com.kevin.ioc.overview.domain.User;
+import com.kevin.base.domain.User;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 import org.springframework.core.io.ClassPathResource;

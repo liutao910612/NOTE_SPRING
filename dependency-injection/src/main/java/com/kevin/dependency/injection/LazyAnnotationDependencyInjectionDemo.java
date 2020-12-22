@@ -3,7 +3,6 @@ package com.kevin.dependency.injection;
 import com.kevin.dependency.injection.annotation.InjectUser;
 import com.kevin.dependency.injection.annotation.MyAutowired;
 import com.kevin.ioc.overview.domain.User;
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
@@ -16,8 +15,6 @@ import org.springframework.core.annotation.Order;
 import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.Set;
-
-import static org.springframework.context.annotation.AnnotationConfigUtils.AUTOWIRED_ANNOTATION_PROCESSOR_BEAN_NAME;
 
 /**
  * {@link ObjectProvider}实现延迟依赖注入

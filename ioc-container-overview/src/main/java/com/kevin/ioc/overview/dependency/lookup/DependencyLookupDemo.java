@@ -1,6 +1,6 @@
 package com.kevin.ioc.overview.dependency.lookup;
 
-import com.kevin.ioc.overview.annotation.Super;
+import com.kevin.base.annotation.Super;
 import com.kevin.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;

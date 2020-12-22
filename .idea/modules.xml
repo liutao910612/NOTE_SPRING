@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NOTE_SPRING.iml" filepath="$PROJECT_DIR$/NOTE_SPRING.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/bean-life-cycle/bean-life-cycle.iml" filepath="$PROJECT_DIR$/bean-life-cycle/bean-life-cycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/bean-scope/bean-scope.iml" filepath="$PROJECT_DIR$/bean-scope/bean-scope.iml" />
       <module fileurl="file://$PROJECT_DIR$/dependency-injection/dependency-injection.iml" filepath="$PROJECT_DIR$/dependency-injection/dependency-injection.iml" />

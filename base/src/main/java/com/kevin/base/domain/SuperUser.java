@@ -1,6 +1,6 @@
-package com.kevin.ioc.overview.domain;
+package com.kevin.base.domain;
 
-import com.kevin.ioc.overview.annotation.Super;
+import com.kevin.base.annotation.Super;
 
 /**
  * @Author:Kevin

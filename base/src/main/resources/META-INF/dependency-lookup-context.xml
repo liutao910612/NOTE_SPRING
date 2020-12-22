@@ -6,7 +6,6 @@
         <property name="id" value="1"/>
         <property name="name" value="alvin"/>
         <property name="city" value="HANGZHOU"/>
-        <property name="configFileLocation" value="classpath:META-INF/user-config.properties"/>
         <property name="workCitys" value="HANGZHOU,SHANGHAI"/>
         <property name="lifeCitys" value="BEIJING,SHANGHAI"/>
     </bean>
@@ -14,4 +13,6 @@
     <bean id="superUser" class="com.kevin.base.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="成都"/>
     </bean>
+
+    <bean id="userHolder" class="com.kevin.base.domain.UserHolder" autowire="constructor"></bean>
 </beans>

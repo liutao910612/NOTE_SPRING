@@ -66,3 +66,13 @@ InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation<br/>
 + ApplicationEventPublisherAware
 + MessageSourceAware
 + ApplicationContextAware
+
+# Spring Bean初始化阶段
+## Bean初始化(Initialization)
++ @PostConstruct标注方法
++ 实现InitializingBean接口的afterPropertiesSet()方法
++ 自定义初始化方法
+
+# Spring Bean初始化完成阶段
+## 方法回调
++ Spring4.1+:SmartInitializingSingleton#afterSingletonInstantiated

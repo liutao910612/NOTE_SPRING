@@ -1,10 +1,7 @@
 package com.kevin.base.domain;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanClassLoaderAware;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.*;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 
@@ -12,7 +9,7 @@ import org.springframework.core.env.Environment;
  * @Author:Kevin
  * @Date:Created in 20:35 2020/12/22
  */
-public class UserHolder implements BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware {
+public class UserHolder implements BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware,SmartInitializingSingleton {
     private User user;
 
     private String beanName;
@@ -23,6 +20,8 @@ public class UserHolder implements BeanNameAware, BeanClassLoaderAware, BeanFact
 
     private Environment environment;
 
+    private String desc;
+
     public UserHolder(User user) {
         this.user = user;
     }
@@ -31,6 +30,8 @@ public class UserHolder implements BeanNameAware, BeanClassLoaderAware, BeanFact
     public String toString() {
         return "UserHolder{" +
                 "user=" + user +
+                ", beanName='" + beanName + '\'' +
+                ", desc='" + desc + '\'' +
                 '}';
     }
 
@@ -48,5 +49,10 @@ public class UserHolder implements BeanNameAware, BeanClassLoaderAware, BeanFact
 
     public void setEnvironment(Environment environment) {
         this.environment = environment;
+    }
+
+    public void afterSingletonsInstantiated() {
+        this.desc = "The user holder V8";
+        System.out.println("init()="+desc);
     }
 }

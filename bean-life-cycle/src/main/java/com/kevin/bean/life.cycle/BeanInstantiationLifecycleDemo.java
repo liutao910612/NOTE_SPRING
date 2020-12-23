@@ -26,6 +26,11 @@ public class BeanInstantiationLifecycleDemo {
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
         String location = "META-INF/dependency-lookup-context.xml";
         beanDefinitionReader.loadBeanDefinitions(location);
+
+        //显示执行preInstantiateSingletons()
+        //SmartInitializingSingleton通常在Spring ApplicationContext场景使用
+        //preInstantiateSingletons将已注册的BeanDefinition初始化成Spring Bean
+        beanFactory.preInstantiateSingletons();
         System.out.println(beanFactory.getBean("user"));
         System.out.println(beanFactory.getBean("superUser"));
         System.out.println(beanFactory.getBean("userHolder"));

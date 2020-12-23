@@ -76,3 +76,7 @@ InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation<br/>
 # Spring Bean初始化完成阶段
 ## 方法回调
 + Spring4.1+:SmartInitializingSingleton#afterSingletonInstantiated
+
+# Spring Bean销毁前阶段
+## 方法回调
++ DestructionAwareBeanPostProcessor#postProcessBeforeDestruction

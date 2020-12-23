@@ -51,6 +51,10 @@ public class UserHolder implements BeanNameAware, BeanClassLoaderAware, BeanFact
         this.environment = environment;
     }
 
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
     public void afterSingletonsInstantiated() {
         this.desc = "The user holder V8";
         System.out.println("init()="+desc);

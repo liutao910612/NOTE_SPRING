@@ -1,5 +1,6 @@
 package com.kevin.bean.life.cycle;
 
+import com.kevin.base.domain.UserHolder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -21,6 +22,7 @@ public class BeanInstantiationLifecycleDemo {
     public static void executeByBeanFactory(){
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         beanFactory.addBeanPostProcessor(new MyInstantiationAwareBeanPostProcessor());
+        beanFactory.addBeanPostProcessor(new MyDestructionAwareBeanPostProcessor());
 
         //基于Java注解的AnnotatedBeanDefinitionReader的实现
         XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory);
@@ -34,6 +36,7 @@ public class BeanInstantiationLifecycleDemo {
         System.out.println(beanFactory.getBean("user"));
         System.out.println(beanFactory.getBean("superUser"));
         System.out.println(beanFactory.getBean("userHolder"));
+        beanFactory.destroyBean("userHolder", beanFactory.getBean("userHolder"));
     }
 
     public static void executeByApplicationContext(){

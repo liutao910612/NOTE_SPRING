@@ -23,3 +23,10 @@ BeanDefinition的继承链中拥有这个接口，可以用于存储临时数据
 ### 3.3 Bean元信息元素 - BeanMetadataElement
 BeanDefinition的继承链中拥有这个接口，可以用于存放环境信息等，便于需要时获取，起到辅助作用,与AttributeAccessor
 不用的是，BeanMetadataElement只能存储一个值。
+
+## 4 Spring容器配置元信息
+### SpringXML配置元信息-beans元信息
+
+|123|234|345|
+|:-|:-|:-|
+|abc|bcd|cde|

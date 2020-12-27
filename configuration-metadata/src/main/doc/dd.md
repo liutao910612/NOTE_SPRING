@@ -47,3 +47,20 @@ BeanDefinition的继承链中拥有这个接口，可以用于存放环境信息
 |<context:property-override>|利用外部化配置资源覆盖Spring属性值|
 
 **总结**BeanDefinitionParserDelegate#populateDefaults方法展示了具体的使用逻辑。
+
+## 基于XML资源装载Spring Bean配置元信息
+### Spring Bean配置元信息
+|XML元素|使用场景|
+|:-|:-|
+|<beans:beans>|单XML资源下的多个Spring Beans配置|
+|<beans:bean>|单个Spring Bean定义（BeanDefinition）配置|
+|<beans:alias>|为Spring Bean定义（BeanDefinition）映射别名|
+|<beans:import>|加载外部Spring XML配置资源|
+
+**SUMMARY**这里的配置读取是由XmlBeanDefinitionReader来完成的,具体步骤如下:<br/>
++ step1:根据location路径生成org.w3c.dom.Document 对象，Document对象其实就是对XML文件的封装。
++ step2:通过org.springframework.beans.factory.xml.BeanDefinitionParserDelegate对象的
+parseBeanDefinitionElement方法来将org.w3c.dom.Element对象解析成org.springframework.beans.factory.config.BeanDefinitionHolder对象。
+注意这里的org.springframework.beans.factory.config.BeanDefinitionHolder就是对BeanDefinition信息即beanName信息的
+封装。
++ step3:通过org.springframework.beans.factory.support.BeanDefinitionRegistry.registerBeanDefinition来注册BeanDefinition.

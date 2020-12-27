@@ -48,7 +48,7 @@ BeanDefinition的继承链中拥有这个接口，可以用于存放环境信息
 
 **总结**BeanDefinitionParserDelegate#populateDefaults方法展示了具体的使用逻辑。
 
-## 基于XML资源装载Spring Bean配置元信息
+## 5 基于XML资源装载Spring Bean配置元信息
 ### Spring Bean配置元信息
 |XML元素|使用场景|
 |:-|:-|
@@ -64,3 +64,21 @@ parseBeanDefinitionElement方法来将org.w3c.dom.Element对象解析成org.spri
 注意这里的org.springframework.beans.factory.config.BeanDefinitionHolder就是对BeanDefinition信息即beanName信息的
 封装。
 + step3:通过org.springframework.beans.factory.support.BeanDefinitionRegistry.registerBeanDefinition来注册BeanDefinition.
+
+## 6 基于Properties资源装载Spring Bean配置元信息
+### Spring Bean配置元信息
+|Properties属性名|使用场景|
+|:-|:-|
+|(class)|Bean类全限定名|
+|(abstract)|是否为抽象的BeanDefinition|
+|(parent)|指定parent BeanDefinition名称|
+|(lazy-init)|是否为延迟初始化|
+|(ref)|应用其他Bean的名称|
+|(scope)|设置Bean的scope属性|
+|${n}|n表示第n+1个构造器参数|
+
+_这里的底层实现为PropertiesBeanDefinitionReader_
+**SUMMARY**这里是通过ropertiesBeanDefinitionReader.loadBeanDefinitions读取配置文件来完成的，具体如下：<br/>
++ step1:通过java.util.Properties.load(java.io.InputStream)将资源读取成Properties对象，这里的Properties其实就是继承自HashMap。
++ step2:通过org.springframework.beans.factory.support.PropertiesBeanDefinitionReader.registerBeanDefinition来将Properties
+读取转换成BeanDefinition的对象，然后进行注册。

@@ -82,3 +82,30 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 + step1:通过java.util.Properties.load(java.io.InputStream)将资源读取成Properties对象，这里的Properties其实就是继承自HashMap。
 + step2:通过org.springframework.beans.factory.support.PropertiesBeanDefinitionReader.registerBeanDefinition来将Properties
 读取转换成BeanDefinition的对象，然后进行注册。
+
+## 7 基于Java注解装载Spring Bean配置元信息
+### 1 Spring模式注解
+|Spring注解|场景说明|起始版本|
+|:-|:-|:-|
+|@Repository|数据仓储模式注解|2.0|
+|@Component|通用组件模式注解|2.5|
+|@Service|服务模式注解|2.5|
+|@Controller|Web控制器模式注解|2.5|
+|@Configuration|配置类模式注解|3.0|
+
+### 2 Spring Bean 依赖注入注解
+|Spring注解|场景说明|起始版本|
+|:-|:-|:-|
+|@Autowired|Bean依赖注入，支持多种依赖查找方式|2.5|
+|@Qualifier|细粒度的@Autowired依赖查找|2.5|
+
+|Java注解|场景说明|起始版本|
+|:-|:-|:-|
+|@Resource|类似于@Autowired|2.5|
+|@Inject|类似于@Autowired|2.5|
+
+### 3 Spring Bean条件装配组件
+|Spring注解|场景说明|起始版本|
+|:-|:-|:-|
+|@Profile|配置化条件装配|2.5|
+|@Conditional|编程条件装配|2.5|

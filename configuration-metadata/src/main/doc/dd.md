@@ -45,4 +45,5 @@ BeanDefinition的继承链中拥有这个接口，可以用于存放环境信息
 |<context:mbean-server>|将当前平台作为MBeanServer|
 |<context:property-placeholder>|加载外部化配置资源作为Spring属性配置|
 |<context:property-override>|利用外部化配置资源覆盖Spring属性值|
+
 **总结**BeanDefinitionParserDelegate#populateDefaults方法展示了具体的使用逻辑。

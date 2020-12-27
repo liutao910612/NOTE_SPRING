@@ -15,6 +15,7 @@
         <module>dependency-source</module>
         <module>bean-scope</module>
         <module>bean-life-cycle</module>
+        <module>configuration-metadata</module>
         <module>base</module>
     </modules>
     <packaging>pom</packaging>

@@ -63,8 +63,8 @@ BeanDefinition的继承链中拥有这个接口，可以用于存放环境信息
 parseBeanDefinitionElement方法来将org.w3c.dom.Element对象解析成org.springframework.beans.factory.config.BeanDefinitionHolder对象。
 注意这里的org.springframework.beans.factory.config.BeanDefinitionHolder就是对BeanDefinition信息即beanName信息的
 封装。
-+ step3:通过org.springframework.beans.factory.support.BeanDefinitionRegistry.registerBeanDefinition来注册BeanDefinition.
-
++ step3:通过org.springframework.beans.factory.support.BeanDefinitionRegistry.registerBeanDefinition来注册BeanDefinition.<br/>
+上面的step2和step3都是在org.springframework.beans.factory.xml.BeanDefinitionDocumentReader中来完成的。
 ## 6 基于Properties资源装载Spring Bean配置元信息
 ### Spring Bean配置元信息
 |Properties属性名|使用场景|
@@ -82,6 +82,16 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 + step1:通过java.util.Properties.load(java.io.InputStream)将资源读取成Properties对象，这里的Properties其实就是继承自HashMap。
 + step2:通过org.springframework.beans.factory.support.PropertiesBeanDefinitionReader.registerBeanDefinition来将Properties
 读取转换成BeanDefinition的对象，然后进行注册。
+**From geek**Spring Properties资源BeanDefinition解析与注册<br/>
++ 核心API-PropertiesBeanDefinitionReader<br/>
+&nbsp;&nbsp;**资源**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;字节流-Resource
+&nbsp;&nbsp;&nbsp;&nbsp;字符流-EncodedResource(has encode , convenient to read)
+&nbsp;&nbsp;**底层**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;存储-java.util.Properties<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;BeanDefinition解析-API内部实现<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;BeanDefinition注册-BeanDefinitionRegistry<br/>
+
 
 ## 7 基于Java注解装载Spring Bean配置元信息
 ### 1 Spring模式注解

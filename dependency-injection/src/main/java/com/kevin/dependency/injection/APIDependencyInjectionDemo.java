@@ -1,7 +1,6 @@
 
 package com.kevin.dependency.injection;
 
-import com.kevin.ioc.overview.domain.User;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;

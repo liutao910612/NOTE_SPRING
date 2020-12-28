@@ -1,6 +1,6 @@
 package com.kevin.dependency.injection;
 
-import com.kevin.ioc.overview.domain.User;
+import com.kevin.base.domain.User;
 
 /**
  * @Author:Kevin

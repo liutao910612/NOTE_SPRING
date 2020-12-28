@@ -1,6 +1,6 @@
 package com.kevin.bean.factory;
 
-import com.kevin.ioc.overview.domain.User;
+import com.kevin.base.domain.User;
 import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;

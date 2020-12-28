@@ -1,8 +1,8 @@
 package com.kevin.dependency.injection;
 
+import com.kevin.base.domain.User;
 import com.kevin.dependency.injection.annotation.InjectUser;
 import com.kevin.dependency.injection.annotation.MyAutowired;
-import com.kevin.ioc.overview.domain.User;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;

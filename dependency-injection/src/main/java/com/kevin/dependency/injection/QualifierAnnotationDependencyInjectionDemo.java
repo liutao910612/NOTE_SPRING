@@ -1,7 +1,7 @@
 package com.kevin.dependency.injection;
 
+import com.kevin.base.domain.User;
 import com.kevin.dependency.injection.annotation.UserGroup;
-import com.kevin.ioc.overview.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;

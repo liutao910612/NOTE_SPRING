@@ -1,6 +1,6 @@
 package com.kevin.ioc.overview.dependency.container;
 
-import com.kevin.ioc.overview.domain.User;
+import com.kevin.base.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

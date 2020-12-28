@@ -119,3 +119,12 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 |:-|:-|:-|
 |@Profile|配置化条件装配|2.5|
 |@Conditional|编程条件装配|2.5|
+
+**Detail is as follow** : <br/>
++ step1,org.springframework.context.annotation.ConfigurationClassPostProcessor#postProcessBeanFactory 来处理指定BeanFactory。
++ step2,org.springframework.context.annotation.ConfigurationClassParser#processConfigurationClass来处理ConfigurationClass
++ step3,org.springframework.context.annotation.ClassPathBeanDefinitionScanner#doScan 根据包名扫描来获得具体得BeanDefinition
++ step4,org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider#scanCandidateComponents 根据包名转换成packageSearchPath,
+以获取到指定注解(For example : @Component)的BeanDefinition。
++ step5,最后使用BeanDefinitionRegistry进行注册。
+

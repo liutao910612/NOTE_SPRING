@@ -1,6 +1,5 @@
 package com.kevin.dependency.lookup;
-
-import com.kevin.ioc.overview.domain.User;
+import com.kevin.base.domain.User;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectProvider;

@@ -128,3 +128,16 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 以获取到指定注解(For example : @Component)的BeanDefinition。
 + step5,最后使用BeanDefinitionRegistry进行注册。
 
+## 8 基于Java注解装配Spring IoC容器配置元信息
+### 1 Spring IoC容器装配注解
+|Spring注解|场景说明|起始版本|
+|:-|:-|:-|
+|@ImportResource|替换XML元素<import>|3.0|
+|@Import|导入Configuration Class |3.0|
+|@ComponentScan|扫描指定package下标注Spring模式注解的类|3.1|
+
+### 2 Spring IoC配置属性注解
+|Spring注解|场景说明|起始版本|
+|:-|:-|:-|
+|@PropertySource|配置属性抽象PropertySource注解|3.1|
+|@PropertySources|@PropertySource集合注解|4.0|

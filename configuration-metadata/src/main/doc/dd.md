@@ -129,15 +129,22 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 + step5,最后使用BeanDefinitionRegistry进行注册。
 
 ## 8 基于Java注解装配Spring IoC容器配置元信息
-### 1 Spring IoC容器装配注解
+### 8.1 Spring IoC容器装配注解
 |Spring注解|场景说明|起始版本|
 |:-|:-|:-|
 |@ImportResource|替换XML元素<import>|3.0|
 |@Import|导入Configuration Class |3.0|
 |@ComponentScan|扫描指定package下标注Spring模式注解的类|3.1|
 
-### 2 Spring IoC配置属性注解
+### 8.2 Spring IoC配置属性注解
 |Spring注解|场景说明|起始版本|
 |:-|:-|:-|
 |@PropertySource|配置属性抽象PropertySource注解|3.1|
 |@PropertySources|@PropertySource集合注解|4.0|
+
+## 9 基于Extensible XML authoring扩展Spring XML元素
+### Spring XML扩展
++ 编写XML Schema文件 ： 定义XML结构
++ 自定义NamespaceHandler实现：命名空间绑定
++ 自定义BeanDefinitionParser实现：XML元素与BeanDefinition解析
++ 注册XML扩展：命名空间与XML Schema映射

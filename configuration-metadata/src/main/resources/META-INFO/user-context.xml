@@ -1,0 +1,10 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:user="https://github.com/schema/users"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        https://github.com/schema/users
+        https://github.com/schema/users.xsd
+     ">
+    <user:user id="002" name="alvin" city="BEIJING"/>
+</beans>

@@ -1,0 +1,2 @@
+## 定义namespace 与 NamespaceHandler的映射
+https\://github.com/schema/users=com.kevin.configuration.metadata.UsersNamespaceHandler

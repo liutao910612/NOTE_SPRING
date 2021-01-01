@@ -148,3 +148,12 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 + 自定义NamespaceHandler实现：命名空间绑定
 + 自定义BeanDefinitionParser实现：XML元素与BeanDefinition解析
 + 注册XML扩展：命名空间与XML Schema映射
+
+## 10 基于Properties资源装载外部化配置
+### 注解驱动
++ @org.springframework.context.annotation.PropertySource
++ @org.springframework.context.annotation.PropertySources
+
+### API编程
++ org.springframework.core.env.PropertySource
++ org.springframework.core.env.PropertySources

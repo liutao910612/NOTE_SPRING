@@ -157,3 +157,9 @@ _这里的底层实现为PropertiesBeanDefinitionReader_
 ### API编程
 + org.springframework.core.env.PropertySource
 + org.springframework.core.env.PropertySources
+
+## 11 基于YML资源装载外部化配置
+### API编程
+#### org.springframework.beans.factory.config.YamlProcessor
+org.springframework.beans.factory.config.YamlPropertiesFactoryBean<br/>
+org.springframework.beans.factory.config.YamlMapFactoryBean<br/>

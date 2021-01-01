@@ -1,7 +1,6 @@
 package com.kevin.configuration.metadata;
 
 import com.kevin.base.domain.User;
-import com.kevin.base.domain.UserHolder;
 import com.kevin.base.enums.City;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

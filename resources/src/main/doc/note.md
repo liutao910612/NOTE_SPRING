@@ -7,3 +7,13 @@
 |可写资源|org.springframework.core.io.WritableResource|
 |编码资源|org.springframework.core.io.support.EncodedResource|
 |上下文资源|org.springframework.core.io.ContextResource|
+
+## 2 Spring内建Resource实现
+|资源来源|资源协议|实现类|
+|:-|:-|:-|
+|Bean定义|无|org.springframework.beans.factory.support.BeanDefinitionResource|
+|数组|无|org.springframework.core.io.ByteArrayResource|
+|类路径|classpath:/|org.springframework.core.io.ClassPathResource|
+|文件系统|file:/|org.springframework.core.io.FileSystemResource|
+|URL|URL支持的协议|org.springframework.core.io.UrlResource|
+|ServletContext|无|org.springframework.web.context.support.ServletContextResource|

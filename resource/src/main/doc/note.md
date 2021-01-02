@@ -35,3 +35,12 @@
 + &nbsp;&nbsp;&nbsp;&nbsp;org.springframework.core.io.FileSystemResourceLoader
 + &nbsp;&nbsp;&nbsp;&nbsp;org.springframework.core.io.ClassRelativeResourceLoader
 + &nbsp;&nbsp;&nbsp;&nbsp;org.springframework.context.support.AbstractApplicationContext
+
+## 5 Spring通配路径资源加载器
+**通配路径ResourceLoader**<br/>
++ org.springframework.core.io.support.ResourcePatternResolver
++ &nbsp;&nbsp;org.springframework.core.io.support.PathMatchingResourcePatternResolver
+
+**路径匹配器**<br/>
++ org.springframework.util.PathMatcher
++ &nbsp;&nbsp;Ant模式匹配实现-org.springframework.util.AntPathMatcher

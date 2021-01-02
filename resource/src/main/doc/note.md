@@ -27,3 +27,11 @@
 
 **编码资源接口**
 + org.springframework.core.io.support.EncodedResource
+
+## 4 Spring资源加载器
+**Resource加载器**<br/>
++ org.springframework.core.io.ResourceLoader
++ &nbsp;&nbsp;org.springframework.core.io.DefaultResourceLoader
++ &nbsp;&nbsp;&nbsp;&nbsp;org.springframework.core.io.FileSystemResourceLoader
++ &nbsp;&nbsp;&nbsp;&nbsp;org.springframework.core.io.ClassRelativeResourceLoader
++ &nbsp;&nbsp;&nbsp;&nbsp;org.springframework.context.support.AbstractApplicationContext

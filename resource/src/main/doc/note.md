@@ -44,3 +44,14 @@
 **路径匹配器**<br/>
 + org.springframework.util.PathMatcher
 + &nbsp;&nbsp;Ant模式匹配实现-org.springframework.util.AntPathMatcher
+
+## 6 Spring 通配路径资源扩展
++ 实现org.springframework.util.PathMatcher
++ 重置PathMatcher
++ &nbsp;&nbsp;PathMatchingResourcePatternResolver#setPathMatcher
+
+## 7 依赖注入Spring Resource
+**基于@Value实现** <br/>
+For example : <br/>
+@Value("classpath:/...")<br/>
+private Resource resource;

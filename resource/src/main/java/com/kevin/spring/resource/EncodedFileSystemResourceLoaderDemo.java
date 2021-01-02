@@ -1,5 +1,6 @@
 package com.kevin.spring.resource;
 
+import com.kevin.base.utils.ResourceUtil;
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.FileSystemResourceLoader;
@@ -24,11 +25,6 @@ public class EncodedFileSystemResourceLoaderDemo {
 
         //最终底层也是在构建FileSystemResource对象
         Resource fileSystemResource = fileSystemResourceLoader.getResource(currentJavaFilePath);
-        EncodedResource encodedResource = new EncodedResource(fileSystemResource,"UTF-8");
-
-        //字符输入流
-        try(Reader reader = encodedResource.getReader()){
-            System.out.println(IOUtils.toString(reader));
-        }
+        System.out.println(ResourceUtil.getContent(fileSystemResource,"UTF-8"));
     }
 }

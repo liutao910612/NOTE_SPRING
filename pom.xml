@@ -16,6 +16,7 @@
         <module>bean-scope</module>
         <module>bean-life-cycle</module>
         <module>configuration-metadata</module>
+        <module>resource</module>
         <module>base</module>
     </modules>
     <packaging>pom</packaging>

@@ -55,3 +55,8 @@
 For example : <br/>
 @Value("classpath:/...")<br/>
 private Resource resource;
+
+## 8 依赖注入ResourceLoader
++ 方法1：实现ResourceLoaderAware回调
++ 方法2：@Autowired注入ResourceLoader
++ 方法3：注入Application作为ResourceLoader

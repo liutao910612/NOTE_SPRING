@@ -53,3 +53,8 @@
 _在Springboot中已经预先创建了这个bean_
 + 默认内建实现-DelegatingMessageSource
 + &nbsp;&nbsp;层次性查找MessageSource对象
+
+# 7 Spring Boot为什么要新建MessageSource Bean
++ AbstractApplicationContext的实现决定了MessageSource内建实现
++ SpringBoot通过外部化配置简化MessageSource Bean构建
++ Spring Boot基于Bean Validation校验非常普遍

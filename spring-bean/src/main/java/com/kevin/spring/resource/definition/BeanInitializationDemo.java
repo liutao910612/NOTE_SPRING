@@ -1,12 +1,9 @@
-package com.kevin.bean.definition;
+package com.kevin.spring.resource.definition;
 
-import com.kevin.bean.factory.UserFactory;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Configurable;
+import com.kevin.spring.resource.factory.UserFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Bean初始化demo

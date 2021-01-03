@@ -1,4 +1,4 @@
-package com.kevin.bean.definition;
+package com.kevin.spring.resource.definition;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

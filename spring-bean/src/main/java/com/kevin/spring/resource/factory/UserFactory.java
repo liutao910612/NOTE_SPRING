@@ -1,4 +1,4 @@
-package com.kevin.bean.factory;
+package com.kevin.spring.resource.factory;
 
 import com.kevin.base.domain.User;
 import org.springframework.beans.factory.InitializingBean;

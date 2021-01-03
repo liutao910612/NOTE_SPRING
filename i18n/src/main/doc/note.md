@@ -40,3 +40,16 @@
 + 重置消息格式模板
 + 重置java.util.Locale
 + 重置java.text.Format
+
+# 5 MessageSource开箱即用实现
+**基于ResourceBundle+MessageFormat组合MessageSource实现**<br/>
++ org.springframework.context.support.ResourceBundleMessageSource
+**可重载Properties+MessageFormat组合MessageSource实现**<br/>
++ org.springframework.context.support.ReloadableResourceBundleMessageSource
+
+# 6 MessageSource内建依赖
+**MessageSource内建Bean可能来源**<br/>
++ 预注册Bean名称为：“messageSource”，类型为：MessageSource Bean
+_在Springboot中已经预先创建了这个bean_
++ 默认内建实现-DelegatingMessageSource
++ &nbsp;&nbsp;层次性查找MessageSource对象

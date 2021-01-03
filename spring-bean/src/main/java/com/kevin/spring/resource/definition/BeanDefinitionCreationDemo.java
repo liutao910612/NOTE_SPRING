@@ -1,4 +1,4 @@
-package com.kevin.bean.definition;
+package com.kevin.spring.resource.definition;
 
 import com.kevin.base.domain.User;
 import org.springframework.beans.MutablePropertyValues;

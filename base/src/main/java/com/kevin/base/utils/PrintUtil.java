@@ -6,8 +6,8 @@ package com.kevin.base.utils;
  */
 public class PrintUtil {
 
-    public static void print(String str) {
+    public static void print(Object object) {
         System.out.println("===========================" + (System.currentTimeMillis()) + "===================================");
-        System.out.println(str);
+        System.out.println(object);
     }
 }

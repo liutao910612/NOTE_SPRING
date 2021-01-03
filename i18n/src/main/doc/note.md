@@ -50,7 +50,7 @@
 # 6 MessageSource内建依赖
 **MessageSource内建Bean可能来源**<br/>
 + 预注册Bean名称为：“messageSource”，类型为：MessageSource Bean
-_在Springboot中已经预先创建了这个bean_
+_在Springboot中已经预先创建了这个bean_<br/>
 + 默认内建实现-DelegatingMessageSource
 + &nbsp;&nbsp;层次性查找MessageSource对象
 
@@ -58,3 +58,9 @@ _在Springboot中已经预先创建了这个bean_
 + AbstractApplicationContext的实现决定了MessageSource内建实现
 + SpringBoot通过外部化配置简化MessageSource Bean构建
 + Spring Boot基于Bean Validation校验非常普遍
+
+# 8 如何实现配置自动更新MessageSource
+**主要技术**<br/>
++ Java NIO 2:java.nio.file.WatchService
++ Java Concurrency:java.util.concurrent.ExecutorService
++ Spring:org.springframework.context.support.AbstractMessageSource

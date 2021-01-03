@@ -1,4 +1,4 @@
-package com.kevin.bean.scope;
+package com.kevin.spring.resource.scope;
 
 import com.sun.istack.internal.NotNull;
 import org.springframework.beans.factory.ObjectFactory;

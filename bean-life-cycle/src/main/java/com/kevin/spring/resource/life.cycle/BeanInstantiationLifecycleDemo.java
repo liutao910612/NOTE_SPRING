@@ -1,6 +1,5 @@
-package com.kevin.bean.life.cycle;
+package com.kevin.spring.resource.life.cycle;
 
-import com.kevin.base.domain.UserHolder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

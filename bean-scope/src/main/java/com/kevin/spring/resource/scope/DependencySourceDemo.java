@@ -1,4 +1,4 @@
-package com.kevin.bean.scope;
+package com.kevin.spring.resource.scope;
 
 import com.kevin.base.domain.User;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;

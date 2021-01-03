@@ -1,4 +1,4 @@
-package com.kevin.bean.life.cycle;
+package com.kevin.spring.resource.life.cycle;
 
 import com.kevin.base.domain.User;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

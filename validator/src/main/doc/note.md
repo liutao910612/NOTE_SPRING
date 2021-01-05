@@ -30,3 +30,12 @@
 + 调用reject或rejectValue方法
 + 获取Errors对象中ObjectError或FieldError
 + 将ObjectError或FieldError中的code和args，关联MessageSource实现（如：org.springframework.context.support.ResourceBundleMessageSource）
+
+# 5 自定义Validator
+**实现org.springframework.validation.Validator接口**<br/>
++ 实现support方法
++ 实现validate方法
++ &nbsp;&nbsp;通过Errors对象收集错误信息
++ &nbsp;&nbsp;&nbsp;&nbsp;ObjectError:对象（Bean）错误。
++ &nbsp;&nbsp;&nbsp;&nbsp;FieldError：对象（Bean）属性（Property）错误
++ &nbsp;&nbsp;通过ObjectError和FieldError关联MessageSource实现获取最终文案

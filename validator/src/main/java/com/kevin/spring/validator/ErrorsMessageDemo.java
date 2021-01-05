@@ -1,4 +1,4 @@
-package com.kevin.spring.verification;
+package com.kevin.spring.validator;
 
 import com.kevin.base.domain.User;
 import com.kevin.base.utils.PrintUtil;
@@ -49,9 +49,10 @@ public class ErrorsMessageDemo {
         });
     }
 
-    private static MessageSource createMessageSource() {
+    static MessageSource createMessageSource() {
         StaticMessageSource messageSource = new StaticMessageSource();
         messageSource.addMessage("name.required", Locale.getDefault(),"the name of User must not be null");
+        messageSource.addMessage("id.required", Locale.getDefault(),"the id of User must not be null");
         messageSource.addMessage("user.properties.not.null", Locale.getDefault(),"The user must exist");
         return messageSource;
     }

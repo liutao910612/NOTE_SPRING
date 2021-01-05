@@ -39,3 +39,8 @@
 + &nbsp;&nbsp;&nbsp;&nbsp;ObjectError:对象（Bean）错误。
 + &nbsp;&nbsp;&nbsp;&nbsp;FieldError：对象（Bean）属性（Property）错误
 + &nbsp;&nbsp;通过ObjectError和FieldError关联MessageSource实现获取最终文案
+
+# 6 Validator的救赎
++ 核心组件-org.springframework.validation.beanvalidation.LocalValidatorFactoryBean
++ 依赖Bean Validation - JSR-303 or JSR-349 provider
++ Bean方法参数校验-org.springframework.validation.beanvalidation.MethodValidationPostProcessor

@@ -20,6 +20,7 @@
         <module>i18n</module>
         <module>base</module>
         <module>validator</module>
+        <module>data-binding</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

@@ -24,6 +24,8 @@ public class User {
     private List<City> lifeCitys;
     private Resource configFileLocation;
 
+    private Company company;
+
     public User() {
     }
 
@@ -80,6 +82,14 @@ public class User {
         this.lifeCitys = lifeCitys;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     public static User createUser() {
         User user = new User();
         user.setId(1L);
@@ -96,6 +106,7 @@ public class User {
                 ", workCitys=" + Arrays.toString(workCitys) +
                 ", lifeCitys=" + lifeCitys +
                 ", configFileLocation=" + configFileLocation +
+                ", company=" + company +
                 '}';
     }
 

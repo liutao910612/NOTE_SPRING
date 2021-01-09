@@ -44,3 +44,13 @@ org.springframework.core.convert.converter.GenericConverter
 **注册转换器实现**<br/>
 + 通过ConversionServiceFactoryBean Spring Bean
 + 通过org.springframework.core.convert.ConversionService API
+
+# 6.统一类型转换服务
+org.springframework.core.convert.ConversionService<br/>
+|实现类型|说明|
+|:-|:-|
+|GenericConversionService|通用ConversionService实现，不内置转换器实现|
+|DefaultConversionService|基础ConversionService实现，内置常用转换器实现|
+|FormattingConversionService|通用Formatter+GenericConversionService实现，不内置转换器和Formatter实现|
+|DefaultFormattingConversionService|DefaultConversionService+格式化实现（如：JSR-354 Money & Currency,JSR-310 Date-Time）|
+

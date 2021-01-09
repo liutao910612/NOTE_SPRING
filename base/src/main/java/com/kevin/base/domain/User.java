@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @Author:Kevin
@@ -25,6 +26,8 @@ public class User {
     private Resource configFileLocation;
 
     private Company company;
+
+    private String contextAsText;
 
     public User() {
     }
@@ -90,6 +93,14 @@ public class User {
         this.company = company;
     }
 
+    public String getContextAsText() {
+        return contextAsText;
+    }
+
+    public void setContextAsText(String contextAsText) {
+        this.contextAsText = contextAsText;
+    }
+
     public static User createUser() {
         User user = new User();
         user.setId(1L);
@@ -107,6 +118,7 @@ public class User {
                 ", lifeCitys=" + lifeCitys +
                 ", configFileLocation=" + configFileLocation +
                 ", company=" + company +
+                ", contextAsText='" + contextAsText + '\'' +
                 '}';
     }
 

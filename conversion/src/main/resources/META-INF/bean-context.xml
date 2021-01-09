@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       https://www.springframework.org/schema/util/spring-util.xsd
+       ">
+
+    <!-- java.util.Properties -->
+    <util:properties id="context">
+        <prop key="name">kevin</prop>
+        <prop key="id">1</prop>
+    </util:properties>
+
+    <bean id="user" class="com.kevin.base.domain.User">
+        <property name="id" value="1"/>
+        <property name="name" value="alvin"/>
+        <property name="city" value="HANGZHOU"/>
+        <property name="contextAsText" ref="context"/> <!-- Properties -> String -->
+    </bean>
+
+
+
+    <!-- 声明ConversionServiceFactoryBean 并且名称必须为 conversionService-->
+    <bean name="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters" ref="propertiesToStringConverter"/>
+    </bean>
+
+    <bean id="propertiesToStringConverter" class="com.kevin.spring.conversion.PropertiesToStringConverter"/>
+
+</beans>

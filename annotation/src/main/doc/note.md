@@ -26,3 +26,18 @@ For example : <br/>
 + &nbsp;&nbsp;基于ImportSelector接口实现
 + &nbsp;&nbsp;基于ImportBeanDefinitionRegistrar接口实现
 
+# 4.Spring条件注解
+**基于配置条件注解-@org.springframework.context.annotation.Profile**<br/>
++ 关联对象-org.springframework.core.env.Environment中的Profiles
++ 实现变化：从Spring4.0开始，@Profile基于@Conditional实现
+
+**基于编程条件注解-@org.springframework.context.annotation.Conditional**<br/>
++ 关联对象-org.springframework.context.annotation.Condition具体实现
+
+**@Conditional实现原理**<br/>
+1. 上下文对象-org.springframework.context.annotation.ConditionContext
+2. 条件判断-org.springframework.context.annotation.ConditionEvaluator
+3. 配置阶段-org.springframework.context.annotation.ConfigurationCondition.ConfigurationPhase
+4. 判断入口-org.springframework.context.annotation.ConfigurationClassPostProcessor
++ &nbsp;&nbsp;org.springframework.context.annotation.ConfigurationClassParser
+

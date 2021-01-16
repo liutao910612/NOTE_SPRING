@@ -43,3 +43,34 @@ Spring Framework3.1开始引入Environment抽象，它统一Spring配置属性�
 1. 通过注入@Value
 + 实现-org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor
 这里需要再次强调的是@Autowired和@Value的具体实现均来之AutowiredAnnotationBeanPostProcessor
+
+# 8.Spring类型转换在Environment中的运用
+1. Environment底层实现
++ 底层实现-org.springframework.core.env.PropertySourcesPropertyResolver
++ 核心方法-convertValueIfNecessary
+
+2. 底层服务-org.springframework.core.convert.ConversionService
++ 默认实现-org.springframework.core.convert.support.DefaultConversionService
+
+# 9.Spring类型转换在@Value中的运用
+1. @Value底层实现
++ 底层实现-org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor
++ &nbsp;&nbsp;org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency
+``
++ 底层服务-org.springframework.beans.TypeConverter
++ &nbsp;&nbsp;默认实现-org.springframework.beans.TypeConverterDelegate
++ &nbsp;&nbsp;java.beans.PropertyEditor
++ &nbsp;&nbsp;org.springframework.core.convert.ConversionService
+
+# 10.Spring 配置属性源PropertySource
+1. API
++ 单配置属性源-org.springframework.core.env.PropertySource
++ 多配置属性源-org.springframework.core.env.PropertySources
+
+2. 注解
++ 单配置属性源-org.springframework.context.annotation.PropertySource
++ 多配置属性源-org.springframework.context.annotation.PropertySources
+
+3. 关联
++ 存储对象-org.springframework.core.env.MutablePropertySources
++ 关联方法-org.springframework.core.env.ConfigurableEnvironment.getPropertySources

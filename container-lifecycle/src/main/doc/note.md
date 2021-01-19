@@ -132,5 +132,43 @@ ClassLoader。
 针对ApplicationListenerDetector的注入，这个类实现了DestructionAwareBeanPostProcessor和MergedBeanDefinitionPostProcessor，其实是在Bean销毁和
 BeanDefinition merge的时候来对类型是ApplicationListener来进行处理。    
 总结上面的内容，我们可以发现这个阶段就是做一些准备来帮助我们进行依赖查找和注入，以及将一些辅助Bean添加到上下文里面。   
+# 4.BeanFactory后置处理阶段
+BeanFactory后置处理是再次对BeanFactory做一些定制和数据存储，可能是注册新的BeanFactory，也可能是调整BeanFactory的一些行为。在AbstractApplicationContext
+中是通过如下两个方法来实现的   
+```java
+// Allows post-processing of the bean factory in context subclasses.
+postProcessBeanFactory(beanFactory);
 
+// Invoke factory processors registered as beans in the context.
+invokeBeanFactoryPostProcessors(beanFactory);
+```
+postProcessBeanFactory是由子类来实现的，在我们扩展beanFactory后置处理的时候很少会选择这种方法，因为这需要通过继承来实现，而invokeBeanFactoryPostProcessors
+这种方法类似与组合，我们更多选择这种方法来实现后置处理。   
+**（1）postProcessBeanFactory**    
+我们看AnnotationConfigServletWebServerApplicationContext#postProcessBeanFactory   
+```java
+@Override
+protected void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+super.postProcessBeanFactory(beanFactory);
+if (this.basePackages != null && this.basePackages.length > 0) {
+    this.scanner.scan(this.basePackages);
+}
+if (!this.annotatedClasses.isEmpty()) {
+    this.reader.register(ClassUtils.toClassArray(this.annotatedClasses));
+```
+这里在执行当前方法的操作之前首先调了父类的方法，这里通过扫描basePackages来生成一些bean，这其实就是注解实现Bean的逻辑入口，并且注册Config class。   
+**（2）invokeBeanFactoryPostProcessors**    
+```java
+protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+    //获取到所有的BeanFactoryPostProcessor并进行激活
+    PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());
 
+    // Detect a LoadTimeWeaver and prepare for weaving, if found in the meantime
+    // (e.g. through an @Bean method registered by ConfigurationClassPostProcessor)
+    if (beanFactory.getTempClassLoader() == null && beanFactory.containsBean(LOAD_TIME_WEAVER_BEAN_NAME)) {
+        beanFactory.addBeanPostProcessor(new LoadTimeWeaverAwareProcessor(beanFactory));
+        beanFactory.setTempClassLoader(new ContextTypeMatchClassLoader(beanFactory.getBeanClassLoader()));
+    }
+}
+```   
+上面的激活BeanFactoryPostProcessor包含了BeanDefinitionRegistryPostProcessor 和BeanFactoryPostProcessor。

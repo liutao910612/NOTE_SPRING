@@ -258,3 +258,53 @@ public static void registerBeanPostProcessors(
 + nonOrderedPostProcessors   
 在获取到这三个部分之后并分别对每个部分进行排序，以此来保证BeanPostProcessor处理的先后顺序。所以在我们实现自己的PostProcessor的时候我们可以利用这一点
 来确保自己的PostProcessor的执行顺序。
+# 6.初始化内建Bean:MessageSource
+初始化MessageSource的逻辑在这里就比较简单了，我们先来看一看initMessageSource的具体实现：   
+```java
+protected void initMessageSource() {
+    ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+    if (beanFactory.containsLocalBean(MESSAGE_SOURCE_BEAN_NAME)) {
+        this.messageSource = beanFactory.getBean(MESSAGE_SOURCE_BEAN_NAME, MessageSource.class);
+        // Make MessageSource aware of parent MessageSource.
+        if (this.parent != null && this.messageSource instanceof HierarchicalMessageSource) {
+            HierarchicalMessageSource hms = (HierarchicalMessageSource) this.messageSource;
+            if (hms.getParentMessageSource() == null) {
+                // Only set parent context as parent MessageSource if no parent MessageSource
+                // registered already.
+                hms.setParentMessageSource(getInternalParentMessageSource());
+            }
+        }
+        if (logger.isTraceEnabled()) {
+            logger.trace("Using MessageSource [" + this.messageSource + "]");
+        }
+    }
+    else {
+        // Use empty MessageSource to be able to accept getMessage calls.
+        DelegatingMessageSource dms = new DelegatingMessageSource();
+        dms.setParentMessageSource(getInternalParentMessageSource());
+        this.messageSource = dms;
+        beanFactory.registerSingleton(MESSAGE_SOURCE_BEAN_NAME, this.messageSource);
+        if (logger.isTraceEnabled()) {
+            logger.trace("No '" + MESSAGE_SOURCE_BEAN_NAME + "' bean, using [" + this.messageSource + "]");
+        }
+    }
+}
+``` 
+从上面的源码我们可以看出，这里的逻辑就是将messageSource注册为单例bean，并且设置他的双亲委派关系。   
+# 7.初始化内建Bean:Spring事件广播器
+内建事件广播器的实现也比较简单，调用的是方法**initApplicationEventMulticaster**,这里判断如果不存在就new一个SimpleApplicationEventMulticaster。
+# 8.Spring应用上下文刷新阶段
+Spring应用上下文刷新阶段**onRefresh**，字面意思是当应用上下文刷新的时候，有点类似事件。这个方法在AbstractApplicationContext里面的实现是一个空方法，
+子类可以通过实现这个方法来对做一些自己的操作，当然这里就可以利用到前面的步骤中已经初始化好的Bean。
+# 9.Spring事件监听器注册阶段
+Spring事件监听器注册阶段是通过**registerListeners**方法来进行实现的，这个方法里面包含下面三个步骤：   
++ 添加当前应用上下文所关联的ApplicationListener对象（集合）
++ 添加BeanFactory所注册ApplicationListener Beans
++ 广播早期Spring事件   
+由于只要ApplicationContext被实例化后，就可以往里面添加ApplicationListener,但是这个时候我们的事件广播器并没有实例化好，
+所以在需要在注册事件监听器的时候首先获取
+当前应用上下文中关联的事件监听器来进行注册。   
+这里针对早期Spring事件的产生,如果我们实现了ApplicationEventPublisherAware，获取到了ApplicationEventPublisher，并广播事件，
+这个时候如果广播器没有初始化完成，就会将事件进行缓存，所以这个时候就需要发布早期事件的一个操作。
+# 10.BeanFactory初始化完成阶段
+# 11.Spring应用上下文刷新完成阶段

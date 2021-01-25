@@ -313,4 +313,11 @@ Spring应用上下文刷新完成阶段是定义在AbstractApplicationContext#fi
 2. 初始化LifecycleProcessor对象-initLifecycleProcessor()
 3. 调用LifecycleProcessor#onRefresh()方法
 4. 发布Spring应用上下文刷新事件-ContextRefreshedEvent
-5. 向MBeanServer托管Live Beans
+5. 向MBeanServer托管Live Beans   
+# 12.Spring应用上下文启动阶段
+刷新可以认为是一种广义的启动，start是指狭义的启动。这是Spring扩展的生命周期，这个生命周期的作用有以下两种：
++ 启动LifecycleProcessor   
+依赖查找Lifecycle Beans   
+启动Lifecycle Beans , 调用每个Bean的start方法来完成启动。   
++ 发布Spring应用上下文已启动事件-ContextStartedEvent
+

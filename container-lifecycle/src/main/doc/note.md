@@ -308,3 +308,9 @@ Spring事件监听器注册阶段是通过**registerListeners**方法来进行�
 这个时候如果广播器没有初始化完成，就会将事件进行缓存，所以这个时候就需要发布早期事件的一个操作。
 # 10.BeanFactory初始化完成阶段
 # 11.Spring应用上下文刷新完成阶段
+Spring应用上下文刷新完成阶段是定义在AbstractApplicationContext#finishRefresh方法里面的，这个方法里面分为以下几个小步骤：   
+1. 清除ResourceLoader缓存-clearResourceCaches()@since5.0
+2. 初始化LifecycleProcessor对象-initLifecycleProcessor()
+3. 调用LifecycleProcessor#onRefresh()方法
+4. 发布Spring应用上下文刷新事件-ContextRefreshedEvent
+5. 向MBeanServer托管Live Beans

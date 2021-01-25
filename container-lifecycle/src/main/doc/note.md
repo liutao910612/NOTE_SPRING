@@ -328,3 +328,17 @@ Spring应用上下文停止阶段，和Spring应用上下文启动阶段类似�
 依赖查找Lifecycle Beans   
 停止Lifecycle Beans , 调用每个Bean的stop方法来完成启动。   
 + 发布Spring应用上下文停止事件-ContextStoppedEvent
+
+# 14.Spring应用上下文关闭阶段
+Spring应用上下文的关闭是通过调用AbstractApplicationContext#close方法来完成的，这个阶段主要完成以下内容：    
++ 状态标识：active(false)、closed(true)
++ Live Beans JMX撤销托管   
+LiveBeansView.unregisterApplicationContext   
++ 发布Spring应用上下文已关闭事件-ContextClosedEvent
++ 关闭LifecycleProcessor   
+依赖查找Lifecycle Beans   
+停止Lifecycle Beans   
++ 销毁Spring Beans
++ 关闭Bean Factory
++ 回调onClose()   
++ 注册Shutdown Hook线程（如果曾注册）

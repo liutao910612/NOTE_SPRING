@@ -20,4 +20,11 @@
 常用OOP继承和组合相结合
 + Java动态代理   
 JDK动态代理   
-字节码提升，如CGLIB   
+字节码提升，如CGLIB  
+ 
+#Java AOP拦截模式
++ 拦截类型   
+前置拦截（Before）   
+后置拦截（After）
+异常拦截（Exception）   
+

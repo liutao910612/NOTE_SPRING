@@ -28,3 +28,24 @@ JDK动态代理
 后置拦截（After）
 异常拦截（Exception）   
 
+#Spring AOP Advice类型
+**Advice类型**   
+环绕（Around）   
+前置（Before）   
+后置（After）   
+--方法执行   
+--finally执行   
+异常（Exception）   
+
+#Spring AOP代理实现
+JDK动态代理实现--基于接口代理   
+CGLIB动态代理实现--基于类代理（字节码提升）   
+Aspectj适配器实现
+
+#AspectJ基础
+**AspectJ语法**   
++ Aspect
++ Join Points
++ Pointcuts
++ Advice
++ Introduction

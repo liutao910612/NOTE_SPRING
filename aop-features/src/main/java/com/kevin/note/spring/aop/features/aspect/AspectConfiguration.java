@@ -1,8 +1,7 @@
 package com.kevin.note.spring.aop.features.aspect;
 
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 
 /**
  * @Author:Kevin
@@ -17,7 +16,28 @@ public class AspectConfiguration {
     }
 
     @Before("anyPublicMethod()")  //Join Point拦截动作
-    public void beforeAnyPublicMethod(){
+    public void beforeAnyPublicMethod() {
         System.out.println("@Before at any public method.");
+    }
+
+    @Around("anyPublicMethod()")  //Join Point拦截动作
+    public Object aroundAnyPublicMethod(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("@Around at any public method.");
+        return pjp.proceed();
+    }
+
+    @After("anyPublicMethod()")
+    public void afterAnyPublicMethod() {
+        System.out.println("@After at any public method.");
+    }
+
+    @AfterReturning("anyPublicMethod()")
+    public void afterReturnAnyPublicMethod() {
+        System.out.println("@AfterReturning at any public method.");
+    }
+
+    @AfterThrowing("anyPublicMethod()")
+    public void afterThrowAnyPublicMethod() {
+        System.out.println("@AfterThrowing at any public method.");
     }
 }

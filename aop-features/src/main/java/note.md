@@ -43,3 +43,10 @@ Spring Schema-Based配置
 + org.springframework.aop.framework.ProxyFactoryBean
 + org.springframework.aop.aspectj.annotation.AspectJProxyFactory
 
+#自动动态代理
+**代表实现**   
++ org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator
++ org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator
++ org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+
+

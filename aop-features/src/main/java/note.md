@@ -29,4 +29,17 @@ Spring Schema-Based配置
 + 异常发生后：@org.aspectj.lang.annotation.AfterThrowing
 + finally执行：@org.aspectj.lang.annotation.After
 
+#API实现三种After Advice
+核心接口-org.springframework.aop.AfterAdvice   
+类型：标记接口，与org.aopalliance.aop.Advice类似    
+扩展   
++ org.springframework.aop.AfterReturningAdvice
++ org.springframework.aop.ThrowsAdvice   
+
+接受对象-org.springframework.aop.framework.AdvisedSupport   
+基础实现类-org.springframework.aop.framework.ProxyCreatorSupport   
+常见实现类   
++ org.springframework.aop.framework.ProxyFactory
++ org.springframework.aop.framework.ProxyFactoryBean
++ org.springframework.aop.aspectj.annotation.AspectJProxyFactory
 

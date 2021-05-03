@@ -1,8 +1,6 @@
 package com.kevin.note.spring.aop.features;
 
-import com.kevin.note.spring.aop.features.aspect.AspectConfiguration;
 import com.kevin.note.spring.aop.overview.EchoService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

@@ -49,4 +49,19 @@ Spring Schema-Based配置
 + org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator
 + org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
 
+#Pointcut操作
+组合实现-org.springframework.aop.support.ComposablePointcut   
+**工具类**   
++ ClassFilter工具类-ClassFilters   
++ MethodMatcher工具类-MethodMatchers
++ Pointcut工具类-Pointcuts
 
+#Pointcut便利实现
++ 静态Pointcut-StaticMethodMatcherPointcut
++ 正则表达式Pointcut-JdkRegexpMethodPointcut
++ 控制流Pointcut-ControlFlowPointcut
+
+#Pointcut AspectJ实现
+1、实现类-org.springframework.aop.aspectj.AspectJExpressionPointcut
+2、指令支持-SUPPORTED_PRIMITIVES 字段   
+3、表达式-org.aspectj.weaver.tools.PointcutExpression

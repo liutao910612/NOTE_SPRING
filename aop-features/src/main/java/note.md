@@ -65,3 +65,59 @@ Spring Schema-Based配置
 1、实现类-org.springframework.aop.aspectj.AspectJExpressionPointcut
 2、指令支持-SUPPORTED_PRIMITIVES 字段   
 3、表达式-org.aspectj.weaver.tools.PointcutExpression
+
+#Joinpoint执行动作接口-Advice
+**Around Advice-Interceptor**
++ 方法拦截器-MethodInterceptor
++ 构造器拦截器-ConstructorInterceptor
+
+**前置动作**   
++ 标准接口-org.springframework.aop.BeforeAdvice
++ 方法级别-org.springframework.aop.MethodBeforeAdvice
+
+**后置动作**   
++ org.springframework.aop.AfterAdvice
++ org.springframework.aop.AfterReturningAdvice
++ org.springframework.aop.ThrowsAdvice   
+
+#Joinpoint Before Advice标准实现   
+**接口**   
++ 标准接口-org.springframework.aop.BeforeAdvice
++ 方法级别-org.springframework.aop.MethodBeforeAdvice   
+
+**实现**   
+org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor
+
+#Joinpoint After Advice标准实现
+**接口**   
++ org.springframework.aop.AfterAdvice
++ org.springframework.aop.AfterReturningAdvice
++ org.springframework.aop.ThrowsAdvice   
+
+**实现**   
++ org.springframework.aop.framework.adapter.ThrowsAdviceInterceptor
++ org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor   
+
+#Joinpoint After Advice AspectJ实现   
+**接口**   
++ org.springframework.aop.AfterAdvice
++ org.springframework.aop.AfterReturningAdvice
++ org.springframework.aop.ThrowsAdvice 
+
+**实现**  
++ org.springframework.aop.aspectj.AspectJAfterAdvice
++ org.springframework.aop.aspectj.AspectJAfterReturningAdvice
++ org.springframework.aop.aspectj.AspectJAfterThrowingAdvice  
+
+#Pointcut与Advice连接器-PointcutAdvisor
+**接口**   
+-org.springframework.aop.PointcutAdvisor   
+**通用实现**   
+-org.springframework.aop.support.DefaultPointcutAdvisor   
+**AspectJ实现**   
+-org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor
+-org.springframework.aop.aspectj.AspectJPointcutAdvisor   
+**静态方法实现**   
+-org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor   
+**IoC容器实现**   
+-org.springframework.aop.support.AbstractBeanFactoryPointcutAdvisor

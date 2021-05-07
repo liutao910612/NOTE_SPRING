@@ -1,4 +1,4 @@
-package com.kevin.spring.annotation;
+package com.kevin.note.spring.annotation;
 
 import com.kevin.base.utils.PrintUtil;
 import org.springframework.context.annotation.*;

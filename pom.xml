@@ -27,6 +27,7 @@
         <module>environment</module>
         <module>container-lifecycle</module>
         <module>aop-overview</module>
+        <module>aop-features</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

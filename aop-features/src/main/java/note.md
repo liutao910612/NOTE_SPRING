@@ -121,3 +121,13 @@ org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor
 -org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor   
 **IoC容器实现**   
 -org.springframework.aop.support.AbstractBeanFactoryPointcutAdvisor
+
+#Introduction与Advice连接器
+**接口**   
+-org.springframework.aop.IntroductionAdvisor   
+**元信息**   
+-org.springframework.aop.IntroductionInfo，实现持有代理对象实现接口的约束范围，这个范围其实就是jdk动态代理里面的interfaces。   
+**通用实现**   
+-org.springframework.aop.support.DefaultIntroductionAdvisor   
+**AspectJ实现**   
+-org.springframework.aop.aspectj.DeclareParentsAdvisor

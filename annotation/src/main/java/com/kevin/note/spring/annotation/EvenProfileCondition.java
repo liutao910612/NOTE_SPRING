@@ -1,4 +1,4 @@
-package com.kevin.spring.annotation;
+package com.kevin.note.spring.annotation;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;

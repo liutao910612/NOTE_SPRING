@@ -1,4 +1,4 @@
-package com.kevin.spring.annotation;
+package com.kevin.note.spring.annotation;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

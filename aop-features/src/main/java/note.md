@@ -176,4 +176,36 @@ org.springframework.aop.framework.ObjenesisCglibAopProxy
 **特殊实现**   
 -org.springframework.aop.framework.InterceptorAndDynamicMethodMatcher   
 **默认实现**   
--org.springframework.aop.framework.DefaultAdvisorChainFactory
+-org.springframework.aop.framework.DefaultAdvisorChainFactory   
+
+## 23.目标对象来源接口与实现   
+**核心API**   
+-org.springframework.aop.TargetSource   
+**实现**   
++ org.springframework.aop.target.HotSwappableTargetSource
++ org.springframework.aop.target.AbstractPoolingTargetSource
++ org.springframework.aop.target.PrototypeTargetSource
++ org.springframework.aop.target.ThreadLocalTargetSource
++ org.springframework.aop.target.SingletonTargetSource   
+
+## 24.代理对象创建基础类
+**核心API**   
+-org.springframework.aop.framework.ProxyCreatorSupport   
+**语义**   
+代理对象创建基础类   
+**基类**   
+-org.springframework.aop.framework.AdvisedSupport   
+
+## 25.AdvisedSupport事件监听器   
+**核心API**   
+-org.springframework.aop.framework.AdvisedSupportListener   
+**事件对象**   
+-org.springframework.aop.framework.AdvisedSupport   
+**事件来源**   
+-org.springframework.aop.framework.ProxyCreatorSupport   
+**激活事件触发**   
+ProxyCreatorSupport#createAopProxy   
+**变更事件触发**   
+代理接口变化时、Advisor变化时、配置复制   
+
+

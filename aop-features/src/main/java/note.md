@@ -168,4 +168,12 @@ org.springframework.aop.framework.ObjenesisCglibAopProxy
 **实现接口**   
 -org.springframework.aop.framework.Advised   
 **使用场景**   
--org.springframework.aop.framework.AopProxy实现
+-org.springframework.aop.framework.AopProxy实现   
+
+## 22.Advisor链工厂接口与实现   
+**核心API**   
+-org.springframework.aop.framework.AdvisorChainFactory   
+**特殊实现**   
+-org.springframework.aop.framework.InterceptorAndDynamicMethodMatcher   
+**默认实现**   
+-org.springframework.aop.framework.DefaultAdvisorChainFactory

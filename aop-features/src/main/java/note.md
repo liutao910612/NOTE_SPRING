@@ -206,6 +206,48 @@ org.springframework.aop.framework.ObjenesisCglibAopProxy
 **激活事件触发**   
 ProxyCreatorSupport#createAopProxy   
 **变更事件触发**   
-代理接口变化时、Advisor变化时、配置复制   
+代理接口变化时、Advisor变化时、配置复制     
+
+## 26.ProxyCreatorSupport标准实现   
+**核心API**   
+-org.springframework.aop.framework.ProxyFactory   
+**基类**   
+-org.springframework.aop.framework.ProxyCreatorSupport   
+**特性增强**   
+提供一些便利操作   
+
+## 27.ProxyCreatorSupport IoC容器实现   
+**核心API**   
+-org.springframework.aop.framework.ProxyFactoryBean   
+**基类**   
+-org.springframework.aop.framework.ProxyCreatorSupport   
+**特点**   
+Spring IoC容器整合   
++ org.springframework.beans.factory.BeanClassLoaderAware   
++ org.springframework.beans.factory.BeanFactoryAware   
+**特性增强**   
+实现org.springframework.beans.factory.FactoryBean   
+
+## 28.ProxyCreatorSupport AspectJ容器实现   
+**核心API**   
+-org.springframework.aop.aspectj.annotation.AspectJProxyFactory   
+**特点**   
+AspectJ注解整合   
+**相关API**     
++ AspectJ元数据-org.springframework.aop.aspectj.annotation.AspectMetadata   
++ AspectJ Advisor工厂-org.springframework.aop.aspectj.annotation.AspectJAdvisorFactory   
+
+## 29.IoC容器自动代理标准实现   
+**基类**    
+-org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator   
+**默认实现**   
+-org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator   
+**Bean名称匹配实现**   
+-org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator   
+**Infrastructure Bean实现**   
+-org.springframework.aop.framework.autoproxy.InfrastructureAdvisorAutoProxyCreator   
+
+
+
 
 

@@ -305,8 +305,40 @@ org.springframework.aop.config.AspectJAutoProxyBeanDefinitionParser
 + advisor
 + advice    
 **底层实现**   
--org.springframework.aop.config.ConfigBeanDefinitionParser
+-org.springframework.aop.config.ConfigBeanDefinitionParser   
 
+## 37.Aspect Schema-based实现   
+**XML元素-<aop:aspect/>**   
+**父元素-<aop:config/>**   
+**属性**   
++ ref-Spring Bean引用的名称
++ order-Aspect顺序   
+**嵌套元素**    
++ pointcut
++ declare-parents
++ before
++ after
++ after-returning
++ after-throwing
++ around
+
+## 38.Pointcut Schema-based实现
+**XML元素-<aop:pointcut/>**   
+**父元素-<aop:aspect/>或<aop:config/>**   
+**属性**   
++ id-Pointcut ID
++ expression-(必须)AspectJ表达式    
+**底层实现**   
+- org.springframework.aop.Pointcut   
+
+## 39.Around Advice Schema-based实现
+**XML元素-<aop:around/>**   
+**父元素-<aop:aspect/>**   
+**属性**   
++ pointcut-AspectJ Pointcut表达式
++ pointcut-ref-引用的AspectJ Pointcut名称
++ method-拦截目标方法
++ arg-names-目标方法参数名称   
 
 
 

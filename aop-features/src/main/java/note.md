@@ -247,6 +247,45 @@ AspectJ注解整合
 **Infrastructure Bean实现**   
 -org.springframework.aop.framework.autoproxy.InfrastructureAdvisorAutoProxyCreator   
 
+## 30.AOP Infrastructure Bean接口   
+**接口**   
+-org.springframework.aop.framework.AopInfrastructureBean   
+**语义**   
+Spring AOP基础Bean标记接口   
+**实现**   
++ org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator
++ org.springframework.aop.scope.ScopedProxyFactoryBean   
+
+**判断逻辑**   
++ AbstractAutoProxyCreator#isInfrastructureClass
++ ConfigurationClassUtils#checkConfigurationClassCandidate   
+
+## 31.AOP上下文辅助类   
+API-org.springframework.aop.framework.AopContext   
+**语义**   
+ThreadLocal的扩展，临时存储AOP对象   
+
+## 32.AOP代理工具类   
+API-org.springframework.aop.framework.AopProxyUtils   
+**代表方法**   
++ getSingletonTarget-从实例中获取单例对象
++ ultimateTargetClass-从实例中获取最终目标类
++ completeProxiedInterfaces-计算AdvisedSupport配置中所有被代理的接口
++ proxiedUserInterfaces-从代理对象中获取代理接口   
+
+## 33.AOP工具类
+
+## 34.AspectJ Enable模块驱动实现   
+**注解**   
+-org.springframework.context.annotation.EnableAspectJAutoProxy   
+**属性方法**   
++ proxyTargetClass-是否开启CGLIB代理   
++ exposeProxy-是否将代理对象暴露在AopContext中   
+**设计模式-@Enable模块驱动**   
+ImportBeanDefinitionRegistrar实现-org.springframework.context.annotation.AspectJAutoProxyRegistrar   
+**底层实现**   
+-org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+
 
 
 

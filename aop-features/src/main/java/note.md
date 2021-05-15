@@ -295,7 +295,17 @@ ImportBeanDefinitionRegistrar实现-org.springframework.context.annotation.Aspec
 **底层实现**   
 org.springframework.aop.config.AspectJAutoProxyBeanDefinitionParser
 
-
+## 36.AOP配置Schema-based实现   
+**XML元素-<aop:config/>**     
+**属性**   
++ proxy-target-class - 是否开启CGLIB代理   
++ expose-proxy - 是否将代理对象暴露在AopContext中   
+**嵌套元素**   
++ pointcut
++ advisor
++ advice    
+**底层实现**   
+-org.springframework.aop.config.ConfigBeanDefinitionParser
 
 
 

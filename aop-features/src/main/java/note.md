@@ -284,7 +284,17 @@ API-org.springframework.aop.framework.AopProxyUtils
 **设计模式-@Enable模块驱动**   
 ImportBeanDefinitionRegistrar实现-org.springframework.context.annotation.AspectJAutoProxyRegistrar   
 **底层实现**   
--org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+-org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator    
+
+## 35.AspectJ XML配置驱动实现   
+**XML元素-<aop:aspectj-autoproxy/>**     
+**属性**   
++ proxy-target-class - 是否开启CGLIB代理   
++ expose-proxy - 是否将代理对象暴露在AopContext中   
+**设计模式-Extensible XML Authoring**    
+**底层实现**   
+org.springframework.aop.config.AspectJAutoProxyBeanDefinitionParser
+
 
 
 
